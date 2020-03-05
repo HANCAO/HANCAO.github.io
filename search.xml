@@ -4,26 +4,25 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/2020/02/21/%E6%B5%8B%E8%AF%95/"/>
-      <url>/2020/02/21/%E6%B5%8B%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>你好</title>
+      <title>test</title>
       <link href="/2020/02/17/%E4%BD%A0%E5%A5%BD/"/>
       <url>/2020/02/17/%E4%BD%A0%E5%A5%BD/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>So this is a new begining.</p>]]></content>
       
       
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     
