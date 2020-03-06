@@ -2,44 +2,6 @@
 <search> 
   
   
-    
-    <entry>
-      <title>添加Hexo Admin</title>
-      <link href="/2020/03/05/%E6%B7%BB%E5%8A%A0Hexo-Admin-1/"/>
-      <url>/2020/03/05/%E6%B7%BB%E5%8A%A0Hexo-Admin-1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test</title>
-      <link href="/2020/02/17/%E4%BD%A0%E5%A5%BD/"/>
-      <url>/2020/02/17/%E4%BD%A0%E5%A5%BD/</url>
-      
-        <content type="html"><![CDATA[<p>So this is a new begining.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
   
   
 </search>
