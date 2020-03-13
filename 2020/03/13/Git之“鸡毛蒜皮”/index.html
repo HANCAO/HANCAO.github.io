@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>归档 | 夜翼</title>
+  <title>Git之“鸡毛蒜皮” | 夜翼</title>
   <meta name="author" content="Hans Chen">
   
   <meta name="description" content="To be a DevOps Engineer.">
@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Git之“鸡毛蒜皮”"/>
   <meta property="og:site_name" content="夜翼"/>
 
   
@@ -115,156 +115,98 @@ var _hmt = _hmt || [];
   	<div class="content">
     	 
 
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title"><i class="fa fa-archive"></i> 归档</h1>
-</div>
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
 	
-
-	  <div id="top_search"></div>
-
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2020">2020<b class="caret"></b></h4>
-			<ul id="2020" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2020-03-13 </span> &raquo;
-		
-		   <span class="title"><a href="/2020/03/13/Git之“鸡毛蒜皮”/" >Git之“鸡毛蒜皮”</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2020-03-10 </span> &raquo;
-		
-		   <span class="title"><a href="/2020/03/10/英语口语101/" >英语口语101</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2020-03-07 </span> &raquo;
-		
-		   <span class="title"><a href="/2020/03/07/“初步”接触-NET/" >“初步”接触.NET</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2020-03-06 </span> &raquo;
-		
-		   <span class="title"><a href="/2020/03/06/将编程作为一种业余爱好/" >将编程作为一种业余爱好</a></span>
-		
-		</li>			
-		
-		</ul>
+		<div class="page-header">
+			<h1> Git之“鸡毛蒜皮”</h1>
 		</div>
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
 	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
 
 
-		
-			
-	<div class="widget">
-		<h4>分类</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/Learning/">Learning<span>2</span></a></li>
-		
-			<li><a href="/categories/Overview/">Overview<span>1</span></a></li>
-		
-		</ul>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>这篇博文将会陆续记录我在使用Git过程出现的不知所以然的问题，以及相对应的解决方案。希望再次遇到问题时能够一眼定位，从容解决。</p>
+<a id="more"></a>
+<h4 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h4><h5 id="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。"><a href="#环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。" class="headerlink" title="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。"></a>环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。</h5><p>由于本地使用hexo，博客项目文件所在目录不是git目录，提交直接使用hexo d到仓库master分支下。而在服务器端，是直接git clone下仓库文件，以下是服务器端git分支情况。</p>
+<p><img src="/images/gitbranch.png" alt="gitbranch"></p>
+<p>还有一点必须要提下，服务器端拉取下的仓库文件 包含于 Github仓库文件，即前者文件数量是多于后者的，而又不能简单的将前者的文件git push到Github仓库中，因为本地重新执行hexo g &amp;&amp; hexo d时会再次生成项目文件，即“复原”。</p>
+<h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><h5 id="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"><a href="#目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。" class="headerlink" title="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"></a>目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。</h5><p>本来使用hexo部署静态</p>
+	  
 	</div>
 
-		
-			
-	<div class="widget">
-		<h4>标签云</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/English/">English<span>1</span></a></li>
-		
-			<li><a href="/tags/NET/">.NET<span>1</span></a></li>
-		
-		 
-		</ul>
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/03/10/英语口语101/" type="button" class="btn btn-default ">下一页<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
 	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">留言</h2>
+
+    
+</section>
 
 
+	</div> <!-- col-md-9/col-md-12 -->
 		
-			
-<div class="widget">
-  <h4>最新文章</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2020/03/13/Git之“鸡毛蒜皮”/" ><i class="fa fa-file-o"></i>Git之“鸡毛蒜皮”</a>
-      </li>
-    
-      <li>
-        <a href="/2020/03/10/英语口语101/" ><i class="fa fa-file-o"></i>英语口语101</a>
-      </li>
-    
-      <li>
-        <a href="/2020/03/07/“初步”接触-NET/" ><i class="fa fa-file-o"></i>“初步”接触.NET</a>
-      </li>
-    
-      <li>
-        <a href="/2020/03/06/将编程作为一种业余爱好/" ><i class="fa fa-file-o"></i>将编程作为一种业余爱好</a>
-      </li>
-    
-  </ul>
-</div>
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
 
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-03-13 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
 		
-			
-<div class="widget">
-	<h4>链接</h4>
-	<ul class="blogroll list-unstyled">
-	
-		<li><i class="fa fa-github"></i><a href="https://github.com/HANCAO" title="HANCAO's Github." target="_blank"]);">Github</a></li>
-	
-		<li><i class="fa fa-tumblr"></i><a href="https://hschen.tumblr.com/" title="English blog." target="_blank"]);">Tumblr</a></li>
-	
-		<li><i class="fa fa-weixin"></i><a href="https://blog.hschen.top/img/weixin.png" title="Weixin essay." target="_blank"]);">微信</a></li>
-	
-		<li><i class="fa fa-photo"></i><a href="https://hschenblog.lofter.com" title="Berlin wall." target="_blank"]);">相册</a></li>
-	
-	</ul>
-</div>
 
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
 
+	</div>
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
 
+</div><!-- row -->
 
 
 
