@@ -8,9 +8,21 @@
       <link href="/2020/03/13/Git%E4%B9%8B%E2%80%9C%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E2%80%9D/"/>
       <url>/2020/03/13/Git%E4%B9%8B%E2%80%9C%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E2%80%9D/</url>
       
-        <content type="html"><![CDATA[<p>这篇博文将会陆续记录我在使用Git过程出现的不知所以然的问题，以及相对应的解决方案。希望再次遇到问题时能够一眼定位，从容解决。</p><a id="more"></a><h4 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h4><h5 id="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。"><a href="#环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。" class="headerlink" title="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。"></a>环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。</h5><p>由于本地使用hexo，博客项目文件所在目录不是git目录，提交直接使用hexo d到仓库master分支下。而在服务器端，是直接git clone下仓库文件，以下是服务器端git分支情况。</p><p><img src="/images/gitbranch.png" alt="gitbranch"></p><p>还有一点必须要提下，服务器端拉取下的仓库文件 包含于 Github仓库文件，即前者文件数量是多于后者的，而又不能简单的将前者的文件git push到Github仓库中，因为本地重新执行hexo g &amp;&amp; hexo d时会再次生成项目文件，即“复原”。</p><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><h5 id="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"><a href="#目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。" class="headerlink" title="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"></a>目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。</h5><p>本来使用hexo部署静态</p>]]></content>
+        <content type="html"><![CDATA[<p>这篇博文将会陆续记录我在使用Git过程出现的不知所以然的问题，以及相对应的解决方案。希望再次遇到问题时能够一眼定位，从容解决。</p><a id="more"></a><h4 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h4><h5 id="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。"><a href="#环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。" class="headerlink" title="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。"></a>环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。</h5><p>由于本地使用hexo，博客项目文件所在目录不是git目录，提交直接使用hexo d到仓库master分支下。而在服务器端，是直接git clone下仓库文件，以下是服务器端git分支情况。</p><p><img src="/images/gitbranch.png" alt="gitbranch"></p><p>还有一点必须要提下，服务器端拉取下的仓库文件 包含于 Github仓库文件，即前者文件数量是多于后者的，而又不能简单的将前者的文件git push到Github仓库中，因为本地重新执行hexo g &amp;&amp; hexo d时会再次生成项目文件，即“复原”。</p><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><h5 id="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"><a href="#目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。" class="headerlink" title="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"></a>目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。</h5><p>本来使用hexo部署静态博客是件很简单的是，现在却越搞越复杂了。</p>]]></content>
       
       
+      <categories>
+          
+          <category> Solutions </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
       
     </entry>
     
