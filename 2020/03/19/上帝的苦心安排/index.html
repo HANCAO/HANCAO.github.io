@@ -6,15 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Git之“鸡毛蒜皮” | 夜翼</title>
+  <title>上帝的苦心安排 | 夜翼</title>
   <meta name="author" content="Hans Chen">
   
-  <meta name="description" content="About Solution of Git.">
+  <meta name="description" content="读《我与地坛》后感">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Git之“鸡毛蒜皮”"/>
+  <meta property="og:title" content="上帝的苦心安排"/>
   <meta property="og:site_name" content="夜翼"/>
 
   
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header">
-			<h1> Git之“鸡毛蒜皮”</h1>
+			<h1> 上帝的苦心安排</h1>
 		</div>
 	
 
@@ -135,16 +135,12 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  
 		 <div class="alert alert-success description">
-			<i class="fa fa-info-circle"></i> About Solution of Git.
+			<i class="fa fa-info-circle"></i> 读《我与地坛》后感
 		 </div> <!-- alert -->
 	  		
 
-	  <p>这篇博文将会陆续记录我在使用Git过程出现的不知所以然的问题，以及相对应的解决方案。希望再次遇到问题时能够一眼定位，从容解决。</p>
+	  <p>最近在看之前缓存下的《锵锵三人行》，不禁感慨太阳底下实无新鲜之事，五年前讨论的话题，现在还有残影。原本单调重复的生命在当今社会只是随着年龄增长徒添积尘。前段时间的台风涝水，现如今的全球疫情，都令人焦躁不安。越是心中不安，就越是想抓住点什么，于是网上找到一份《我与地坛》的PDF,盼望自己内心能够安定。</p>
 <a id="more"></a>
-<h4 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h4><h5 id="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。"><a href="#环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。" class="headerlink" title="环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。"></a>环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。</h5><p>由于本地使用hexo，博客项目文件所在目录不是git目录，提交直接使用hexo d到仓库master分支下。而在服务器端，是直接git clone下仓库文件，以下是服务器端git分支情况。</p>
-<p><img src="/images/gitbranch.png" alt="gitbranch"></p>
-<p>还有一点必须要提下，服务器端拉取下的仓库文件 包含于 Github仓库文件，即前者文件数量是多于后者的，而又不能简单的将前者的文件git push到Github仓库中，因为本地重新执行hexo g &amp;&amp; hexo d时会再次生成项目文件，即“复原”。</p>
-<h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><h5 id="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"><a href="#目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。" class="headerlink" title="目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"></a>目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。</h5><p>本来使用hexo部署静态博客是件很简单的是，现在却越搞越复杂了。</p>
 	  
 	</div>
 
@@ -154,13 +150,12 @@ var _hmt = _hmt || [];
 
     
     
-    <a href="/2020/03/19/上帝的苦心安排/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2020/03/10/英语口语101/" type="button" class="btn btn-default ">下一页<i
+    <a href="/2020/03/13/Git之“鸡毛蒜皮”/" type="button" class="btn btn-default ">下一页<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -189,7 +184,7 @@ var _hmt = _hmt || [];
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2020-03-13 
+	2020-03-19 
 	</div>
 	
 
@@ -200,7 +195,7 @@ var _hmt = _hmt || [];
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Solutions/">Solutions<span>1</span></a></li>
+    <li><a href="/categories/LifeShow/">LifeShow<span>1</span></a></li>
   </li>
 
     </ul>
@@ -208,14 +203,6 @@ var _hmt = _hmt || [];
 	
 
 	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/Git/">Git<span>1</span></a></li>
-    </ul>
-	</div>
 		
 
 	<!-- toc -->
@@ -224,7 +211,7 @@ var _hmt = _hmt || [];
 	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
 	   <div id="toc" class="toc collapse in">
 		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Question"><span class="toc-article-text">Question</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“-lt-lt-lt-lt-lt-lt-lt-HEAD-XXX-gt-gt-gt-gt-gt-gt-gt-e8510dbe…-”的Git输出。其中XXX是新作的改动。"><span class="toc-article-text">环境描述：本地Windows平台使用hexo搭建静态博客页面，部署同步到Github上。云服务器Linux平台，拉取Github仓库文件，页面展示到指定网站。现在疑惑是页面展示出现诸如：“&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD =======XXX&gt;&gt;&gt;&gt;&gt;&gt;&gt; e8510dbe… =======”的Git输出。其中XXX是新作的改动。</span></a></li></ol></li><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#Answer"><span class="toc-article-text">Answer</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-5"><a class="toc-article-link" href="#目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。"><span class="toc-article-text">目前还没有找到解决方法，猜测是git分支方面的问题，服务器端拉取仓库文件时临时创建了一个新的分支，本地一直以来是上传文件到master上的。</span></a></li></ol></li></ol>
+			
 		</div>
 	
 	</div>
